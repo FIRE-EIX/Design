@@ -100,7 +100,7 @@
                 <a href="#" class="easyui-linkbutton" plain=true iconCls="icon-edit"
                    onclick="openTabs('数据维护','../adminListStudentServlet')">成绩审核</a> <br>
                 <%--<a href="#" class="easyui-linkbutton" plain=true iconCls="icon-edit"
-                   onclick="openTabs('信息录入','../enterInformation')">信息录入0</a> <br>--%>
+                   onclick="openTabs('信息录入','../enterInformation')">信息录入</a> <br>--%>
                     <%--<a href="#" class="easyui-linkbutton" plain=true iconCls="icon-edit"
                        onclick="openTabs('成绩审核','SalaryView.jsp')">成绩审核</a><br>--%>
             </div>
