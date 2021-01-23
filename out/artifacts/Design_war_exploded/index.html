@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>工资管理系统首页</title>
+    <meta charset="UTF-8">
+<!--        <title>Title</title>-->
+        <link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css">
+        <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
+        <script type="text/javascript" src="easyui/jquery.min.js"></script>
+        <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+        <a id="btn-add" class="easyui-linkbutton"
+           data-options="iconCls:'icon-add'"> 增加 </a>
+        <a id="btn-find" class="easyui-linkbutton"
+           data-options="iconCls:'icon-search'"> 查询 </a>
+        <a id="btn-update" class="easyui-linkbutton"
+           data-options="iconCls:'icon-edit'"> 修改 </a>
+        <a id="btn-delete" class="easyui-linkbutton"
+           data-options="iconCls:'icon-remove'"> 删除 </a>
+
+        <style type="text/css">
+            .weather {
+                border: 1px solid #95B8E7;
+                background-color: #E0ECFF;
+                /*background: url(../img/weather_bg2.jpg) no-repeat;width:250px;*/
+                height: 88px;
+                /*margin: 0px;*/
+                /*padding: 20px 2px 2px 65px;*/
+                padding-top: 10px;
+                padding-left: 30px;
+            }
+        </style>
+
+        <script type="text/javascript">
+            /*    $("#btn-add").click(function(){
+                    //将该按失效
+                    $("#btn-add").linkbutton("disable");
+                });
+                $("#btn-add").dblclick(function(){
+                    //将该按失效
+                    $("#btn-add").linkbutton("disable");
+                });*/
+
+            //参数一：字符串类型的事件，多个事件之间通过空格分隔，事件名称符合jquery事件名写法
+            //参数二：处理函数
+            $("#btn-add").bind("click dblclick", function() {
+                //将该按失效
+                $("#btn-add").linkbutton("disable");
+            });
+        </script>
+</head>
+<body class="easyui-layout" >
+
+<!--上面 logo start -->
+<div data-options="region:'north'" style="height:80px;width: 100%;" border=false>
+<!--<div data-options="region:'north',split:true" style="height:100px;" border=false>-->
+    <img src="img/topLogo.png" style="height:74px;width: 400px;"/>
+    <div style="padding-top:40px;float: right;width:380px">
+        <a href="login.html" class="easyui-linkbutton" iconCls="icon-cancel">退出登录</a>
+        <a href="javascript:location.reload();" class="easyui-linkbutton" iconCls="icon-reload">刷新页面</a>
+        <a href="#" class="easyui-linkbutton" iconCls="icon-search">查询信息</a>
+<!--        <a href="#" class="easyui-linkbutton">text button</a>-->
+        <a href="#" class="easyui-linkbutton" iconCls="icon-print">打印信息</a>
+    </div>
+</div>
+<!--上面 logo end -->
+
+<!--底部 版权信息栏-->
+<div data-options="region:'south',split:true" style="height:70px;text-align: center;font-size: 15px;color: gray;">
+    地址：广西壮族自治区南宁市西乡塘区大学东路188号 咨询电话：18648869609
+    <br />
+    Copyright 2000-2099 广西民族大学
+    <br />
+    谢延炎 版权所有
+</div>
+
+<!--<div data-options="region:'east',iconCls:'icon-reload',title:'East',split:true" style="width:100px;"></div>  -->
+
+<!--左边 功能导航栏 start-->
+<div data-options="region:'west',title:'功能导航栏',split:true" border=false style="width:200px;">
+
+    <div id="aa" class="easyui-accordion" fit=true animate=true>
+        <div title="信息管理" data-options="iconCls:'icon-tip'" style="overflow:auto;padding:10px;">
+            <a href="#" class="easyui-linkbutton" plain=true iconCls="icon-edit" onclick="openTabs('账户管理','student.html')">账户管理</a> <br>
+            <a href="#" class="easyui-linkbutton" plain=true iconCls="icon-edit" onclick="openTabs('部门管理','student_score.html')">部门管理</a><br>
+            <a href="#" class="easyui-linkbutton" plain=true iconCls="icon-edit" onclick="openTabs('奖惩录入','student_score.html')">奖惩录入</a>
+        </div>
+        <div title="薪资情况" data-options="iconCls:'icon-tip'" style="padding:10px;">
+            <a href="#" class="easyui-linkbutton" plain=true iconCls="icon-edit"  onclick="openTabs('薪资参数设置')">薪资参数设置</a> <br>
+            <a href="#" class="easyui-linkbutton" plain=true iconCls="icon-edit" onclick="openTabs('薪资查看')">薪资查看</a><br>
+            <a href="#" class="easyui-linkbutton" plain=true iconCls="icon-edit" onclick="openTabs('薪资发放')">薪资发放</a>
+        </div>
+        <div title="统计" data-options="iconCls:'icon-tip'">
+            <a href="#" class="easyui-linkbutton" plain=true iconCls="icon-edit">薪资统计</a> <br>
+            <a href="#" class="easyui-linkbutton" plain=true iconCls="icon-edit">公司薪资可视化</a>
+        </div>
+<!--        <div title="系统管理" data-options="iconCls:'icon-tip'">
+            <a href="#" class="easyui-linkbutton" plain=true iconCls="icon-edit">账户管理</a> <br>
+            <a href="#" class="easyui-linkbutton" plain=true iconCls="icon-edit">修改密码</a> <br>
+            <a href="#" class="easyui-linkbutton" plain=true iconCls="icon-add" onclick="addPanel()">添加分类</a>
+            <a href="#" class="easyui-linkbutton" plain=true iconCls="icon-cancel" onclick="removePanel()">删除分类</a>
+        </div>-->
+    </div>
+</div>
+<!--左边 菜单导航栏 end-->
+
+
+<div data-options="region:'center'" style="padding:0px;" border=false>
+
+    <div id="tt" class="easyui-tabs" fit=true >
+        <div title="欢迎页" style="padding:20px;">
+            <div class="easyui-layout" style="width:70%;height:100%;float: left;">
+                <div id="content" region="center" title="公告栏" style="padding:5px;">
+                    <!--添加公告按钮-->
+                    <a id="btn" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'" style="float: right">添加公告</a>
+                </div>
+            </div>
+            <div style="height: 100%;width: 25%;float: left;margin-left: 20px;">
+                <div class="weather">
+                    <iframe width="100%" scrolling="no" height="100%" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=12&icon=1&num=1">
+                    </iframe>
+                </div>
+                <div id="cal" class="easyui-calendar" style="width:100%;height:300px;margin-top: 10px;"></div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+</body>
+<script type="text/javascript">
+    /**
+     * 打开选项卡
+     *         判断选项卡是否存在   exists 表明指定的面板是否存在，'which'参数可以是选项卡面板的标题或索引。
+     *         不存在 新建选项卡
+     *         如果存在 选中当前选项卡 select 选择一个选项卡面板，'which'参数可以是选项卡面板的标题或者索引。
+     * @param {Object} title
+     */
+    function openTabs(title,url){
+        console.log(title);
+        // 判断选项卡是否存在
+        var exists = $("#tt").tabs("exists",title);
+        if (exists) { //如果返回true，说明选项卡存在，选中当前选项卡
+            $("#tt").tabs("select",title);
+        } else { //如果返回false，说明选项卡不存在，新建选项卡
+            $('#tt').tabs('add',{
+                title: title,
+                selected: true,
+                closable:true,
+                iconCls:'icon-edit',
+                href:url
+            });
+        }
+    }
+</script>
+</html>
